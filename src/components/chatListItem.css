@@ -1,0 +1,66 @@
+.chatListItem{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    height: 70px;
+}
+
+.chatListItem:hover{
+    background-color: #ebe5e5;
+}
+
+.chatListItem--avatar{
+    width: 50px;
+    height:50px;
+    border-radius: 100%;
+    margin-left: 15px;
+}
+
+.chatListItem--lines{
+    flex: 1; /* pega todo espaço restante do espaço disponivel */
+    display: flex;
+    flex-direction: column; /* um do lado do outro */
+    justify-content: center;  /* se nao tiver mensagem .. nome fica no meio */
+    border-bottom: 1px solid #EEE;
+    padding-right: 15px;
+    margin-left: 15px;
+    height: 100%;
+    flex-wrap: wrap; /* Quebra a linha assim que um dos flex itens não puder mais ser compactado */
+    min-width: 0;
+
+}
+
+.chatListItem.active{
+    background-color: #ebe5e5;
+}
+
+.chatListItem--line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.chatListItem--name{
+    font-size: 17px;
+    color: black;
+}
+
+.chatListItem--date{
+    font-size: 12px;
+    color: #999;
+}
+
+.chatListItem--lastMsg{
+    font-size: 14px;
+    color: #999;
+    display: flex; /* pq dentro dela tem um <p></p>*/
+    width: 100%;  
+}
+
+.chatListItem--lastMsg p{
+    overflow: hidden; /* esconde a barra de rolagem */
+    white-space: nowrap; /* nao vai para a linha de baixo */
+    text-overflow: ellipsis; /* define como o espaço em branco dentro de um elemento */
+    margin: 0; /* vai tirar todo espaçamento */
+}

@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+/* O box-sizing com o valor border-box faz com 
+que o navegador não calcule a dimensão de 
+um elemento somando bordas e margens com altura e largura*/
+*{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #D2DBDC;
+  margin: 0;
+  font-family: 'Segoe UI', Helvetica Neue, Helvetica,  Lucida Grande,Arial ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-window{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh; /*vai pegar a tela toda*/;
+  background-color: #EDEDED;
+}
+
+.siderbar{
+    width: 35%; /* vai ocupar so 35% da tela*/
+    max-width: 415px; /* tamanho maximo que ele vai chegar */
+    display: flex; /*  sejam organizados automaticamente flexivel */
+    flex-direction: column; /* para ser organizado abaixo um do outro */
+    border-right: 1px solid #DDD; /* borda */
+}
+
+
+header{
+  height: 60px;/* tamanho fixo */
+  display: flex;
+  justify-content: space-between; /* os itens que tem dentro do header vao ter um espaço entre eles */
+  align-items: center; /*alinha no meio */
+  padding: 0 15px; /*em cima e em baixo 0 , dos lados 15 */
+}
+
+.header--avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px; /* fica redonda */
+  cursor: pointer; /* para o cursor aparecer pra clicar" */
+}
+
+.header--buttons{
+  display: flex;
+}
+
+.header--btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.search{ /* div search */
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #EEE;/*linha */
+    padding: 5px 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search--input{ /* div que possui o icone e o input */
+    background-color: #FFF;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding:  0 10px;
+}
+
+.search--input input{  /* input dentro da div  search--input */
+    flex:1; /* pega o espaço disponivel */
+    border:  0;
+    outline:  0; /* tirar aquela borda azul */
+    background-color: transparent; /* pois a div que ele ta ja esta com uma cor branca*/
+    margin-left: 10px; /* para descolar do icone*/
+}
+
+
+.chatlist{
+  flex: 1;
+  background-color: #FFF;
+  overflow-y: auto ; /* siginifica que se tiver muitos itens ... ele vai ter um scrolls */
+}
+
+.chatlist::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+}
+.chatlist::-webkit-scrollbar-thumb{
+  background-color: rgba(0,0,0,0.2);
+}
+
+.contentarea{
+  flex: 1; /* pega todo o espaço em branco */
 }
